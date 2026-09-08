@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --cream: #FAF3EC;
+  --cream-2: #F1E1D2;
+  --ink: #2B1219;
+  --ink-soft: #5B4249;
+  --ruby: #A31621;
+  --ruby-deep: #7A0F19;
+  --leaf: #3D5C46;
+  --gold: #C9932E;
+  --line: rgba(43, 18, 25, 0.12);
+  --max-w: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  line-height: 1.12;
+  margin: 0;
+  color: var(--ink);
+}
+
+a { color: var(--ruby-deep); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--ruby); outline-offset: 3px; }
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 0;
+}
+.nav .mark {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav .mark span { color: var(--ruby); }
+.nav a.back {
+  font-size: 15px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.nav a.back:hover { border-bottom-color: var(--ink-soft); }
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 90px;
+  padding: 36px 0 48px;
+}
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .links { display: flex; gap: 26px; flex-wrap: wrap; }
+footer a { color: var(--ink-soft); text-decoration: none; font-size: 15px; }
+footer a:hover { color: var(--ruby-deep); }
+footer .copy { font-size: 14px; color: var(--ink-soft); }
+
+/* ---------- Legal doc pages ---------- */
+.doc {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 28px 60px;
+}
+.doc h1 { font-size: 40px; margin-bottom: 6px; }
+.doc .meta { color: var(--ink-soft); font-size: 15px; margin-bottom: 44px; }
+.doc h2 {
+  font-size: 22px;
+  margin-top: 46px;
+  margin-bottom: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.doc h2:first-of-type { border-top: none; padding-top: 0; }
+.doc h3 { font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 16px; margin-top: 22px; margin-bottom: 8px; }
+.doc p, .doc li { color: var(--ink-soft); font-size: 16px; }
+.doc ul, .doc ol { padding-left: 22px; }
+.doc li { margin-bottom: 6px; }
+.doc table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 15px; }
+.doc th, .doc td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--ink-soft); }
+.doc th { color: var(--ink); font-weight: 600; }
+.doc .note {
+  background: var(--cream-2);
+  border-radius: 4px;
+  padding: 16px 18px;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  margin-top: 48px;
+}
+.doc .placeholder { color: var(--ruby-deep); font-weight: 500; }
