@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --header: #122224;
+  --nav: #0B1819;
+  --ground: #F4F2EC;
+  --white: #FFFFFF;
+  --ink: #122224;
+  --button: #581D37;
+  --accent: #99004D;
+  --pill: #7E3564;
+  --teal: #03525B;
+  --sage: #638E8E;
+  --blush: #EDC6D3;
+  --blush-ink: #5E1230;
+  --on-dark: #F4F2EC;
+  --on-dark-muted: #9BADAC;
+  --on-dark-faint: #5E7574;
+  --on-light-muted: #5A6465;
+  --on-light-meta: #8A9291;
+  --line: rgba(18, 34, 36, 0.1);
+  --line-dark: rgba(244, 242, 236, 0.14);
+  --max-w: 1080px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--ink);
+}
+
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+/* ---------- Nav (dark, like the app header) ---------- */
+.nav { background: var(--header); padding: 22px 0; }
+.nav .row { display: flex; align-items: center; justify-content: space-between; }
+.nav .mark {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: -0.02em;
+  color: var(--on-dark);
+  text-decoration: none;
+}
+.nav .mark span { color: var(--pill); }
+.nav a.back { font-size: 14.5px; font-weight: 600; color: var(--on-dark-muted); text-decoration: none; }
+.nav a.back:hover { color: var(--on-dark); }
+
+/* ---------- Footer (dark, like the bottom nav) ---------- */
+footer { background: var(--nav); padding: 40px 0 46px; }
+footer .wrap {
+  display: flex; flex-wrap: wrap; gap: 18px 32px;
+  align-items: center; justify-content: space-between;
+}
+footer .links { display: flex; gap: 26px; flex-wrap: wrap; }
+footer a { color: var(--on-dark-muted); text-decoration: none; font-size: 14.5px; font-weight: 600; }
+footer a:hover { color: var(--on-dark); }
+footer .copy { font-size: 13.5px; color: var(--on-dark-faint); }
+
+/* ---------- Legal doc pages ---------- */
+.doc { max-width: 720px; margin: 0 auto; padding: 50px 28px 70px; }
+.doc h1 { font-size: 38px; margin-bottom: 6px; }
+.doc .meta { color: var(--on-light-muted); font-size: 14.5px; margin-bottom: 40px; }
+.doc h2 {
+  font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--teal); margin-top: 42px; margin-bottom: 14px; padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.doc h2:first-of-type { border-top: none; padding-top: 0; }
+.doc h3 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 15.5px; margin-top: 20px; margin-bottom: 8px; color: var(--ink); }
+.doc p, .doc li { color: var(--on-light-muted); font-size: 15.5px; }
+.doc ul, .doc ol { padding-left: 22px; }
+.doc li { margin-bottom: 6px; }
+.doc table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14.5px; }
+.doc th, .doc td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--on-light-muted); }
+.doc th { color: var(--ink); font-weight: 700; }
+.doc .note {
+  background: var(--white); border: 1px solid var(--line); border-radius: 8px;
+  padding: 16px 18px; font-size: 14px; color: var(--on-light-muted); margin-top: 44px;
+}
+.doc .placeholder { color: var(--accent); font-weight: 600; }
