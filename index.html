@@ -27,33 +27,24 @@
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
   @media (prefers-reduced-motion: reduce) { .hero .status .dot { animation: none; } }
 
-  /* ---- phone mockup echoing the real app screen ---- */
-  .phone {
-    background: var(--header);
-    border-radius: 28px;
-    padding: 14px 14px 0;
-    max-width: 300px;
+  /* ---- hero photo panel ---- */
+  .hero-photo {
+    position: relative;
+    max-width: 340px;
     margin: 0 auto;
-    box-shadow: 0 30px 60px -20px rgba(18,34,36,0.35);
+    border-radius: 22px;
     overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(18,34,36,0.4);
   }
-  .phone .bar { font-size: 20px; font-weight: 800; font-family: 'Bricolage Grotesque', sans-serif; color: var(--on-dark); }
-  .phone .sub { font-size: 12px; color: var(--on-dark-muted); margin-top: 2px; }
-  .phone .search {
-    margin-top: 14px; background: rgba(244,242,236,0.1); border-radius: 10px;
-    padding: 10px 12px; font-size: 12.5px; color: var(--on-dark-faint);
+  .hero-photo img { width: 100%; height: 100%; display: block; object-fit: cover; aspect-ratio: 4/5; }
+  .hero-photo .cap {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(11,24,25,0.88), rgba(11,24,25,0));
+    padding: 26px 20px 16px;
+    color: var(--on-dark);
+    font-size: 13px;
+    font-weight: 600;
   }
-  .phone .tabs { display: flex; gap: 7px; margin-top: 12px; padding-bottom: 14px; }
-  .tag { font-size: 10.5px; font-weight: 700; padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
-  .tag.pill { background: var(--pill); color: var(--on-dark); }
-  .tag.sage { background: rgba(99,142,142,0.28); color: var(--sage); }
-  .phone .body { background: var(--ground); padding: 16px 14px; }
-  .rcard { background: var(--white); border-radius: 12px; padding: 12px; margin-bottom: 10px; display: flex; gap: 10px; }
-  .rcard .thumb { width: 40px; height: 40px; border-radius: 8px; background: var(--line); flex-shrink: 0; }
-  .rcard .name { font-size: 13px; font-weight: 700; color: var(--ink); }
-  .rcard .meta { font-size: 11px; color: var(--on-light-meta); margin: 2px 0 6px; }
-  .rcard .tags { display: flex; gap: 5px; flex-wrap: wrap; }
-  .rcard .tags .tag { font-size: 9px; padding: 3px 7px; }
 
   section.features { padding: 34px 0 10px; }
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
@@ -75,7 +66,7 @@
   @media (max-width: 780px) {
     .hero { grid-template-columns: 1fr; padding-top: 40px; }
     .hero h1 { font-size: 38px; }
-    .phone { max-width: 240px; margin-top: 10px; }
+    .hero-photo { max-width: 240px; margin-top: 10px; }
     .grid3 { grid-template-columns: 1fr; }
     section.cta { padding: 36px 26px; }
   }
@@ -85,7 +76,7 @@
 
 <nav class="nav">
   <div class="wrap row">
-    <a href="index.html" class="mark">Pome<span>granate</span></a>
+    <a href="index.html" class="mark"><img src="assets/logo.png" alt="Pomegranate" style="height:34px; display:block;"></a>
     <a class="back" href="mailto:tishox.apps@gmail.com">tishox.apps@gmail.com</a>
   </div>
 </nav>
@@ -98,41 +89,9 @@
       <div class="status"><span class="dot"></span> Launching soon on iOS and Android</div>
     </div>
 
-    <div class="phone" role="img" aria-label="Preview of the Pomegranate recipe collection screen">
-      <div class="bar">My recipes</div>
-      <div class="sub">4 recipes</div>
-      <div class="search">Search titles and ingredients</div>
-      <div class="tabs">
-        <span class="tag pill">MAIN</span>
-        <span class="tag sage">FRENCH</span>
-        <span class="tag sage">WEEKNIGHT</span>
-      </div>
-      <div class="body">
-        <div class="rcard">
-          <div class="thumb"></div>
-          <div>
-            <div class="name">French-style creamy chicken</div>
-            <div class="meta">6 ingredients · 6 steps</div>
-            <div class="tags"><span class="tag pill">MAIN</span><span class="tag sage">FRENCH</span></div>
-          </div>
-        </div>
-        <div class="rcard">
-          <div class="thumb"></div>
-          <div>
-            <div class="name">Nonna's Sunday ragù</div>
-            <div class="meta">6 ingredients · 4 steps</div>
-            <div class="tags"><span class="tag pill">MAIN</span><span class="tag sage">ITALIAN</span></div>
-          </div>
-        </div>
-        <div class="rcard">
-          <div class="thumb"></div>
-          <div>
-            <div class="name">Pear &amp; brown butter galette</div>
-            <div class="meta">5 ingredients · 4 steps</div>
-            <div class="tags"><span class="tag pill">DESSERT</span><span class="tag sage">FRENCH</span></div>
-          </div>
-        </div>
-      </div>
+    <div class="hero-photo">
+      <img src="assets/hero-bg.jpg" alt="Fresh pomegranate, halved, showing glistening ruby-red arils">
+      <div class="cap">Every recipe, a little jewel.</div>
     </div>
   </section>
 
@@ -160,6 +119,25 @@
         </div>
         <h3>Get inspired</h3>
         <p>Tell Pomegranate what's in your fridge or just how you're feeling, and it'll suggest something from your saved recipes worth cooking tonight.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" style="padding-top:10px;">
+    <div class="eyebrow">The name</div>
+    <h2 style="font-size:32px; margin-top:10px; max-width:22ch;">Why Pomegranate?</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>A splash in every dish</h3>
+        <p>Even a spoonful of arils adds a burst of color and tart-sweet flavor to almost anything you're cooking — the same way one good recipe can lift a whole week of meals.</p>
+      </div>
+      <div class="card">
+        <h3>Jewels, not just seeds</h3>
+        <p>Cut one open and you'll find hundreds of glistening arils packed together. Every recipe you save here is a little jewel too — worth keeping, worth coming back to.</p>
+      </div>
+      <div class="card">
+        <h3>A French word, on purpose</h3>
+        <p><em>Pomegranate</em> comes from the French <em>pomme-grenate</em> — "seeded apple." France's culinary reputation speaks for itself.</p>
       </div>
     </div>
   </section>
